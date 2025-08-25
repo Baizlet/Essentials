@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Shpere-test.ma
-//Last modified: Sun, Aug 24, 2025 09:55:28 PM
+//Last modified: Sun, Aug 24, 2025 10:10:19 PM
 //Codeset: 1252
 requires maya "2026";
 requires "mtoa" "5.5.3";
@@ -10,7 +10,7 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "58C93AE8-4181-7397-149E-688D7BE63B16";
+fileInfo "UUID" "4174ED5E-40AB-62E0-25FF-668D94BBF0DE";
 createNode transform -s -n "persp";
 	rename -uid "FF8A188B-4AD3-1000-38D6-5DB85F63B95C";
 	setAttr ".v" no;
@@ -87,6 +87,18 @@ createNode mesh -n "pSphereShape1" -p "pSphere1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pCube1";
+	rename -uid "502F3444-44E8-325B-3B3C-EAAE8F85F78B";
+createNode mesh -n "pCubeShape1" -p "pCube1";
+	rename -uid "A556D531-4DDB-206A-966D-2E9B29345ABE";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "3BB009EC-4F55-511E-B6D7-16A161FF5CCC";
 	setAttr -s 2 ".lnk";
@@ -154,6 +166,9 @@ createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "8BD9BAC9-41A8-A0FE-895D-0F862CE50C2B";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
+createNode polyCube -n "polyCube1";
+	rename -uid "67A5F24A-46B0-A9B9-B7E0-DCA185A86999";
+	setAttr ".cuv" 4;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -179,6 +194,7 @@ select -ne :openPBR_shader1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
+	setAttr -s 2 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -201,6 +217,7 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
 connectAttr "polySphere1.out" "pSphereShape1.i";
+connectAttr "polyCube1.out" "pCubeShape1.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -209,4 +226,5 @@ connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "pSphereShape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
 // End of Shpere-test.ma
