@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
-//Name: Room.ma
-//Last modified: Wed, Sep 24, 2025 06:25:19 PM
+//Name: Room2.ma
+//Last modified: Wed, Sep 24, 2025 06:25:33 PM
 //Codeset: 1252
 file -rdi 1 -ns "Chair" -rfn "ChairRN" -op "v=0;" -typ "mayaAscii" "C:/Users/User/Baizlet/GitRepos/Essentials/DAGV1100and1200/Maya/scenes/Chair.ma";
 file -rdi 1 -ns "Table" -rfn "TableRN" -op "v=0;" -typ "mayaAscii" "C:/Users/User/Baizlet/GitRepos/Essentials/DAGV1100and1200/Maya/scenes/Table.ma";
@@ -30,7 +30,7 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "F881A644-49CF-CC6F-EC03-70B0F0DA2375";
+fileInfo "UUID" "F3CA3DD8-4659-F51C-882C-749F52201DF4";
 fileInfo "exportedFrom" "C:/Users/User/Documents/maya/projects/default/scenes/scenes/Room_1_modeling1200_BailyCarroll_9-5-2025.ma";
 createNode transform -s -n "persp";
 	rename -uid "9A00457B-42BC-1C56-2C7C-D8868528D154";
@@ -326,7 +326,7 @@ createNode mesh -n "pCubeShape1" -p "pCube1";
 		0 0 -2.3841858e-07 0 0 -2.3841858e-07 0;
 createNode transform -n "top1";
 	rename -uid "563C9E71-4D58-D8A3-3906-2B88E7F5246A";
-	setAttr ".t" -type "double3" 60.686482709620243 59.095076742246633 -41.148250664601647 ;
+	setAttr ".t" -type "double3" 51.181446163628721 50.786083767451792 -34.191729005191057 ;
 	setAttr ".r" -type "double3" -35.199518015614515 -233.80069426341501 0.00059733312722043386 ;
 	setAttr ".rpt" -type "double3" -3.4360906693025544e-14 -1.2579019232130401e-14 3.3698645072693579e-15 ;
 createNode camera -n "top1Shape" -p "top1";
@@ -334,7 +334,7 @@ createNode camera -n "top1Shape" -p "top1";
 	setAttr -k off ".v";
 	setAttr ".rnd" no;
 	setAttr ".fl" 56.64922782490806;
-	setAttr ".coi" 91.497756873246814;
+	setAttr ".coi" 77.083240662368524;
 	setAttr ".ow" 30;
 	setAttr ".imn" -type "string" "top";
 	setAttr ".den" -type "string" "top_depth";
@@ -1678,4 +1678,4 @@ connectAttr "groupId6.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId7.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId9.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId10.msg" ":initialShadingGroup.gn" -na;
-// End of Room.ma
+// End of Room2.ma
