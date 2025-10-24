@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Lamp.ma
-//Last modified: Sat, Oct 11, 2025 02:27:13 PM
+//Last modified: Sun, Oct 12, 2025 11:02:34 AM
 //Codeset: 1252
 requires maya "2026";
 requires -nodeType "sweepMeshCreator" -dataType "sweepMeshData" -dataType "sweepProfileData"
@@ -13,17 +13,17 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 10 Pro v2009 (Build: 19045)";
-fileInfo "UUID" "71EE7433-4885-EE8B-1232-D4816AE4B211";
+fileInfo "UUID" "ADD5AF61-42F8-C5B9-4104-4DBDE85FB6D1";
 createNode transform -s -n "persp";
 	rename -uid "B719E0EF-4382-FA1B-77FC-108E0FC0C55D";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -11.561237445182307 5.8018211300328879 -2.3709485038807454 ;
+	setAttr ".t" -type "double3" -14.833922686849098 6.51778610726985 -2.3138235705236507 ;
 	setAttr ".r" -type "double3" -12.338352730424122 990.99999999954809 -4.5560403007033623e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6DFB249E-4AF5-A7AB-8BA7-AC9CE4D0224A";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 29.025600721469214;
-	setAttr ".coi" 11.838401021882381;
+	setAttr ".coi" 15.188973778541245;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
